@@ -1,6 +1,7 @@
 #CONNECT 4
 
-####VIDEO DEMO: <URL>
+####VIDEO DEMO: https://youtu.be/fQ5FFsJQDTc
+
 ####DESCRIPTION: 
 
 This is a Connect 4 game designed by Nick Diplos for Harvard University's CS50.
