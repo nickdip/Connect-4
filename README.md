@@ -85,13 +85,13 @@ A score is then generated based on this users the scores defined in helpers.
 
 **AI.py**
 
-This is used when it's a computers turn and using alpha-beta pruning. 
+<p>This is used when it's a computers turn and using alpha-beta pruning. </p>
 
 **app.py**
-This contains all the flask functions that to show the program on the web
+<p>This contains all the flask functions that to show the program on the web</p>
 
 **gameclass.py**
-A game via the web is created via a 'game' object that stores important data, this is tracked using 'session' 
+<p>A game via the web is created via a 'game' object that stores important data, this is tracked using 'session' </p>
 
 
 ###Future Implementations/Considerations
