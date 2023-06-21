@@ -1,0 +1,214 @@
+th{
+    background-color: white
+}
+
+
+#arrowheader {
+    margin: 0 auto;
+    display: flex;
+
+}
+
+#board {
+    height: 540px;
+    width: 630px;
+    margin: 0 auto;
+    margin-right: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#createbutton {
+
+        height: 60px;
+        width: 80px;
+        background-color: yellow;
+        font-family: 'Courier', monospace;
+        font-size: 1.1rem;
+        box-shadow: 0px;
+        border-radius: 25px;
+        border: 2px solid black;
+        margin-top: 20px;
+}
+
+#end-message{
+    margin-top: 20px;
+}
+
+#game-end{
+    font-size: 3rem;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 10px;
+    font-family: Verdana, sans-serif;
+    display: inline-flex;
+}
+
+
+#header {
+    background-color: white;
+}
+
+#new {
+    float: right;
+    margin-right: 50px;
+    margin-top: 30px;
+}
+
+#newbutton {
+
+    background-color: transparent;
+    font-family: 'Courier', monospace;
+    font-size: 1.6rem;
+    box-shadow: 0px;
+    border-radius: 25px;
+    border: none;
+    color: darkslategrey;
+}
+
+#newbutton:hover {
+    color: black;
+    font-size: 1.7rem;
+}
+
+#new-round {
+        height: 60px;
+        width: 80px;
+        background-color: yellow;
+        font-family: 'Courier', monospace;
+        font-size: 1.1rem;
+        box-shadow: 0px;
+        border-radius: 25px;
+        border: 2px solid black;
+        margin-left: 30px;
+}
+
+#scores {
+    font-size: 1.3rem;
+}
+
+#tile {
+    float: right;
+    height: 200;
+    width: 100;
+}
+
+#row {
+    background-color: #345eeb;
+}
+
+.arrow {
+    height: 60px;
+    width: 40px;
+    margin: auto;
+}
+
+
+.emptyslot {
+    height: 65px;
+    width: 65px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .newgame {
+    float: right;
+    margin-top: 0px;
+    margin-right: 30px;
+  }
+
+.new-game-btn {
+    border-radius: 0.25rem;
+    background-color: #d9edff;
+    font-family: 'Courier', monospace;
+    box-shadow: 0px;
+}
+
+.new-game-btn-default {
+    background-color: #FCFF22
+}
+
+.red-piece {
+    background-color: red;
+    height: 65px;
+    width: 65px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+.sidebar {
+    right: 0px;
+    top: 0px;
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    background-color: #BFE8FA;
+    text-align: center;
+    border-color: #FFF522;
+    border-left-width: 10px;
+    border-left: solid;
+
+}
+
+.top {
+    display: inline-flex;
+}
+.yellow-piece {
+    background-color: yellow;
+    height: 65px;
+    width: 65px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+@media(max-width:700px) {
+#board{
+    width: 500px;
+}
+ul p{
+    width: 55px;
+    height: 55px;
+    
+}
+
+}
+@media(max-width:520px){
+    #board{
+        width: 400px;
+    }
+    ul p{
+        width: 40px;
+        height: 40px;
+        
+    }
+    
+}
+@media(max-width:420px){
+    #board{
+        width: 320px;
+    }
+    ul p{
+        width: 30px;
+        height: 30px;
+        
+    }
+    
+}
+
+tr:nth-child(1) {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+tr:not(:nth-child(1)) {
+background-color: #345eeb;;
+}
