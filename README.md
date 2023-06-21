@@ -63,8 +63,8 @@ This file is for evaluating the state of a board, including score. To calculate 
 2.  For the current counters for a player on the board, the number of potential wins.
 3.  The number of 'lines' are then calculated:
 For the example below, there are 4 potential wins for 'O' when considering the horizontal (i.e the 'O' could be the last counter in the row, second to last, second or first)
-|_|_|_|_|_|_|_|
-|_|_|_|O|_|_|_|
+>|_|_|_|_|_|_|_|
+>|_|_|_|O|_|_|_|
 
 There are then two diagonal lines which could include 'O' (with a positive and negative gradient)
 
