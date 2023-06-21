@@ -1,8 +1,8 @@
-#CONNECT 4
+# CONNECT 4
 
-####VIDEO DEMO: https://youtu.be/fQ5FFsJQDTc
+#### VIDEO DEMO: https://youtu.be/fQ5FFsJQDTc
 
-####DESCRIPTION: 
+#### DESCRIPTION: 
 
 This is a Connect 4 game designed by Nick Diplos for Harvard University's CS50.
 
@@ -94,7 +94,7 @@ A score is then generated based on this users the scores defined in helpers.
 <p>A game via the web is created via a 'game' object that stores important data, this is tracked using 'session' </p>
 
 
-###Future Implementations/Considerations
+### Future Implementations/Considerations
 1. The scoring is complex, most likely far too complex. I would then to simplify this, as well as the searching within lines.py, at a later point. 
 2. Javascript animations would improve the user experience when playing on the web
 4. There is supposed to be sounds when a user moves into a slot (which you may hear in certain browsers!). This is a known bug that will need to be fixed in the future. 
