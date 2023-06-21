@@ -12,13 +12,13 @@ Below are details about each py file and the purpose.
 
 **helpers.py**
 
-This contains global variables that are used throughout. Here, the default height and width of the board as well as the symbols can be changed. It also includes the default values for calculating the board score. 
+<p>This contains global variables that are used throughout. Here, the default height and width of the board as well as the symbols can be changed. It also includes the default values for calculating the board score. </p>
 
 **main.py** 
-This is the main file that runs when playing throughthe terminal. Objects for each player are created here and each turn is taken through this file.
+<p>This is the main file that runs when playing throughthe terminal. Objects for each player are created here and each turn is taken through this file.</p>
 
 **board.py** 
-This file ceates a board with each 'slot' being an object. It contains functions to display the board, it also contains a special function that will print a desired attribute of a slot for testing purposes if required.
+<p>This file ceates a board with each 'slot' being an object. It contains functions to display the board, it also contains a special function that will print a desired attribute of a slot for testing purposes if required.</p>
 
 The board has several attributes: 
 
@@ -37,10 +37,10 @@ While 'X' has got a potential 4-in-a-row (second slot on the first row), this is
 
 
 **connect.py**
-This file is mostly for actions that are are involved with making a move on the board (i.e choosing a column)
+<p>This file is mostly for actions that are are involved with making a move on the board (i.e choosing a column)</p>
 
 **lines.py**
-This file contains functions that will generate 'lines' in the board. It's important during searching to consider all the horizontal, vertical and diagonal lines and consider each slot. One of the more complex functions in this file is 'connctions'.
+<p>This file contains functions that will generate 'lines' in the board. It's important during searching to consider all the horizontal, vertical and diagonal lines and consider each slot. One of the more complex functions in this file is 'connctions'.</p>
 
 Let's look at this function further:
 > connections(all_lines, allowed_states, allowed_displays, allowed_p1win, allowed_p2win, length)
