@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nick Diplos">
+
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+    <script>
+
+        function button_click () {
+            values_arr = [[1, 0], [1, 0]] //the first two values are 1 player, 2 player and the latter two are red or yellow counter
+            var select_row = document.querySelectorAll('.row');
+                select_row.forEach((buttons, row_index) => {
+                    var options = buttons.querySelectorAll('button');
+                    options.forEach( (selection, option_index) => {
+                        selection.addEventListener('click', () => {
+
+                            options.forEach( (selection) => {
+                                selection.style.backgroundColor = '#d9edff';
+                                });
+
+                            selection.style.backgroundColor = '#FCFF22';
+
+                            values_arr[row_index] = [0, 0]
+
+                            options.forEach( (selection) => {
+                                values_arr[row_index][option_index] = 1
+                                });
+
+        })})})
+
+            return values_arr
+    
+        }
+        
+        function send_data(values_arr) {
+                    $.ajax({
+                        url: '/processing',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ 'data': values_arr }),
+                        success: function(response) {
+                            location.href = "/";
+                        },
+                        error: function(error) {
+                            console.log(error);
+                        }
+                    });
+        }
+
+        function refresh() {
+            const refresh = document.querySelector('#refresh')
+            console.log(refresh)
+            if (refresh != null) {
+                location.reload();
+            }
+        }
+
+        function move_sound(url, id) {
+            var sound_check = document.querySelector(`#${id}`)
+            console.log(sound_check)
+            if (sound_check != null) {
+                const audio = new Audio(url);
+                audio.play();
+                }
+        }
+    
+
+        document.addEventListener('DOMContentLoaded', () => {
+                values_arr = button_click();
+                refresh()
+                move_sound("/static/move_made.wav")
+                move_sound("/static/end_game.wav")
+        })
+    </script>
+
+</head>
+
+
+<body>
+    <div class = "top">
+        <img src = "/static/Connect4Title.png" alt="Connect 4" width="20%" height="20%">
+
+        {% if get_flashed_messages() %}
+        <header>
+            <div id = "game-end">
+                <div id = "end-message">
+                {{ get_flashed_messages() | join(" ") }}
+                </div>
+            <form action = "/newround">
+                <button value = "new-round" id= "new-round">New Round</button>
+            </form>
+            </div>
+        </header>
+
+        {% endif %}
+    </div>
+
+
+    {% if game.new == False %}
+    <div class = "sidebar">
+        <div id = "scores">
+        <p>SCORES</p>
+        <p>Player 1: {{ game.player_scores[0] }} </p>
+        {% if game.computer %}
+        <p>Computer:  {{ game.player_scores[1] }}</p>
+        {% else %}
+        <p>Player 2: {{ game.player_scores[1] }} </p>
+        {% endif %}
+        </div>
+        <form method="post" action="/" id = "new">
+            <input type="submit" value="NEW GAME" name="NEW GAME" id = "newbutton"/>
+        </form>
+    </div>
+
+    {% else %}    
+        <div class = "sidebar">
+            <form method="post" action="/" id = "new">
+                <input type="submit" value="NEW GAME" name="NEW GAME" id = "newbutton"/>
+            </form>
+
+        <div class = "newgame">
+            <div class = 'row'>
+            <p>How would yould like to play?</p>
+            <button class = "new-game-btn new-game-btn-default" name = "1-player" value = "1">1 player</button>
+            <button class = "new-game-btn" name = "2-player" value = "0">2 player</button>
+            </div>
+            <div class = 'row'>
+            <p>Please choose a colour for Player 1:</p>
+            <button class =  "new-game-btn new-game-btn-default" name = "red-counter" value="1">Red</button>
+            <button class = "new-game-btn" name = "yellow-counter" value="0">Yellow</button>
+            </div>
+        </div>
+
+        <button onclick = "send_data(values_arr)"" id= "createbutton" ">START</button>
+
+    </div>
+    {% endif %}
+
+    {% if game.computer == True and game.legal_move == False %}
+    <div id="refresh"></div>
+    {% endif %}
+
+    {% if sound == True %}
+    <div id="playsound"></div>
+    {% endif %}
+</body>
+
+{% block main %}
+{% endblock %}
+
+</html>
