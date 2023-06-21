@@ -26,8 +26,8 @@ The board has several attributes:
 3. p1_win and p2_win: The global variable PLAYER_WINS (in helpers) can be used to access these attributes more easily. The defualt value is 0, meaning the slot, at least currently, can not result in a win. A value of 2 means that this slot an result in a win for a particular player (i.e p1_win = 2 means player 1 can win). A value of 1 means it will result in 4-in-a-row but this is not easily achievable. For example:
 
  
- `|_|_|_|_|_|_|_| `
- `|_|_|_|O|_|_|_| `
+ <p>`|_|_|_|_|_|_|_| `</p>
+ <p>`|_|_|_|O|_|_|_| `</p>
 
 
 While 'X' has got a potential 4-in-a-row (second slot on the first row), this is unlikely to be achieved as it would require an 'X' symbol in the slot below. Unless 'O' is forced into the slot above or does not play optimally, 'O' will then block this score. 
@@ -66,8 +66,8 @@ This file is for evaluating the state of a board, including score. To calculate 
 3.  The number of 'lines' are then calculated:
 For the example below, there are 4 potential wins for 'O' when considering the horizontal (i.e the 'O' could be the last counter in the row, second to last, second or first)
 
- `|_|_|_|_|_|_|_| `
- `|_|_|_|O|_|_|_| `
+ <p>`|_|_|_|_|_|_|_| `</p>
+<p></p> `|_|_|_|O|_|_|_| `</p>
 
 There are then two diagonal lines which could include 'O' (with a positive and negative gradient)
 
