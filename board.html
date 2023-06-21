@@ -1,0 +1,69 @@
+{% extends "index.html" %}
+
+{% block title %}
+Connect 4
+{% endblock %}
+
+{% block main %}
+
+<div id="board">
+    <table>
+        <tr id = "header">
+                <th>
+                    {% if game.legal_move %}
+                        <a href = "/play/0"><img class="arrow" src="static/blue-arrow.png"> </a>
+                    {% endif %}
+                </th>
+                <th>
+                    {% if game.legal_move %}
+                    <a href = "/play/1"><img class="arrow" src="static/blue-arrow.png"> </a>
+                    {% endif %}
+                </th>
+                <th>
+                    {% if game.legal_move %}
+                    <a href = "/play/2"><img class="arrow" src="static/blue-arrow.png"> </a>
+                    {% endif %}
+                </th>
+                <th>
+                    {% if game.legal_move %}
+                    <a href = "/play/3"><img class="arrow" src="static/blue-arrow.png"> </a>
+                    {% endif %}
+                </th>
+                <th>
+                    {% if game.legal_move %}
+                    <a href = "/play/4"><img class="arrow" src="static/blue-arrow.png"> </a>
+                    {% endif %}
+                </th>
+                <th>
+                    {% if game.legal_move %}
+                    <a href = "/play/5"><img class="arrow" src="static/blue-arrow.png"> </a>
+                    {% endif %}
+                </th>
+                <th>
+                    {% if game.legal_move %}
+                    <a href = "/play/6"><img class="arrow" src="static/blue-arrow.png"> </a>
+                    {% endif %}
+                </th>
+        </tr>
+        {% for i in range(5, -1, -1) %}
+            <tr id="row">
+                {% for j in range(7) %}
+                    <td>
+                        {% if game.board[j][i].display == "_" %}
+                            <span class="emptyslot"></span>
+                        {% endif %}
+                        {% if game.board[j][i].display == "X" %}
+                        <span class="yellow-piece"></span>
+                        {% endif %}
+                        {% if game.board[j][i].display == "O" %}
+                        <span class="red-piece"></span>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}
