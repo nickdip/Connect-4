@@ -1,6 +1,6 @@
 # CONNECT 4
 
-#### LIVE DEMO LINK: 
+#### LIVE DEMO LINK: https://nickdiplos.pythonanywhere.com/
 
 ## Features
 - **Terminal-based UI** -: Play connect 4 using a simple terminal-based terminal
