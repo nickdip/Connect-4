@@ -1,7 +1,7 @@
+from board import *
 from helpers import *
 from copy import deepcopy
 from evaluating import *
-from board import *
 from lines import *
 
 

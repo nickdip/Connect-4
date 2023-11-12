@@ -1,11 +1,10 @@
-from flask import Flask, render_template, session, redirect, url_for, request, flash, jsonify
+from flask import Flask, render_template, session, redirect, url_for, request, flash
 from flask_session import Session
 from tempfile import mkdtemp
 from main import * 
 from AI import *
 from evaluating import *
 from gameclass import game
-import sys
 
 app = Flask(__name__)
 
